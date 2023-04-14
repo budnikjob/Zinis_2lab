@@ -17,6 +17,8 @@ namespace SEC_LAB_C
     public partial class MainWindow : Window
     {
 
+        string file_origin;
+
         string path1 = "D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\SavedFile\\Encrypted.txt";
         string path2 = "D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\SavedFile\\Decrypted.txt";
 
