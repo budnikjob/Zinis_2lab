@@ -6,7 +6,7 @@ namespace SEC_LAB_C_.ExcelClass
 {
     public class excel_pr
     {
-        public void ExcelPrint1(string filepath)
+        public static void ExcelPrint1(string filepath)
         {
             
             Excel.Application excel = new Excel.Application();
@@ -58,7 +58,7 @@ namespace SEC_LAB_C_.ExcelClass
             excel.Quit();
         }
 
-        public void ExcelPrint2(string filepath)
+        public static void ExcelPrint2(string filepath)
         {
             Excel.Application excel = new Excel.Application();
             excel.Visible = true;

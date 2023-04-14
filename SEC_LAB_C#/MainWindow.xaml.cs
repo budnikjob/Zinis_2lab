@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using SEC_LAB_C_.AffineCH;
+using SEC_LAB_C_.ExcelClass;
 using SEC_LAB_C_.SaveToFile;
 using SEC_LAB_C_.VizinerCH;
 using System;
@@ -15,8 +16,6 @@ namespace SEC_LAB_C
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        string file_origin;
 
         string path1 = "D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\SavedFile\\Encrypted.txt";
         string path2 = "D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\SavedFile\\Decrypted.txt";
@@ -80,6 +79,9 @@ namespace SEC_LAB_C
                 save_to_file.save(textbox_encrypted_txt.Text, path1);
                 save_to_file.save(textbox_decrypted_txt.Text, path2);
 
+                excel_pr.ExcelPrint1(path1);
+                excel_pr.ExcelPrint2(path2);
+
             }
             
             if (english_rb.IsChecked == true) { //Если английский язык
@@ -105,6 +107,10 @@ namespace SEC_LAB_C
 
                 save_to_file.save(textbox_encrypted_txt.Text, path1);
                 save_to_file.save(textbox_decrypted_txt.Text, path2);
+
+                excel_pr.ExcelPrint1(path1);
+                excel_pr.ExcelPrint2(path2);
+
             }          
             
             if (deut_rb.IsChecked == true) { //Если немецкий язык
@@ -130,6 +136,10 @@ namespace SEC_LAB_C
 
                 save_to_file.save(textbox_encrypted_txt.Text, path1);
                 save_to_file.save(textbox_decrypted_txt.Text, path2);
+
+                excel_pr.ExcelPrint1(path1);
+                excel_pr.ExcelPrint2(path2);
+
             }
 
 
