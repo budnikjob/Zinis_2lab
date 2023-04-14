@@ -23,9 +23,9 @@
 
                     <Border Width="200" Height="82" HorizontalAlignment="Left" Margin="230 -83 0 0" BorderThickness="1" BorderBrush="Gray" Background="#FFF7F7F7">
                         <StackPanel Margin="5 5 5 5">
-                            <RadioButton Content="Русский язык" HorizontalAlignment="Left" Margin="0,0,2,13"></RadioButton>
-                            <RadioButton Content="Английский язык" HorizontalAlignment="Left" Margin="0,0,2,13" ></RadioButton>
-                            <RadioButton Content="Немецкий язык" HorizontalAlignment="Left" Margin="0,0,2,13"></RadioButton>
+                            <RadioButton Content="Русский язык" HorizontalAlignment="Left" Margin="0,0,2,13" x:Name="russia_rb"></RadioButton>
+                            <RadioButton Content="Английский язык" HorizontalAlignment="Left" Margin="0,0,2,13" x:Name="english_rb"></RadioButton>
+                            <RadioButton Content="Немецкий язык" HorizontalAlignment="Left" Margin="0,0,2,13" x:Name="deut_rb"></RadioButton>
                         </StackPanel>
                     </Border>
 

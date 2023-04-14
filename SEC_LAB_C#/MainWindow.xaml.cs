@@ -62,24 +62,73 @@ namespace SEC_LAB_C
             int key_a = Convert.ToInt32(input_key_a.Text);
             int key_b = Convert.ToInt32(input_key_b.Text);
 
-            //Зашифрование сообщения
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            var encrypted_txt = affine_cheaper.AFFINE_ENCRYPTED(normal_txt, key_a, key_b);
-            sw.Stop();
-            time_encr.Content = sw.ElapsedMilliseconds + " мс";
-            //
-            
-            //Расшифрование сообщения
-            Stopwatch sw2 = new Stopwatch();
-            sw2.Start();
-            var decrypted_txt = affine_cheaper.AFFINE_DECRYPTED(encrypted_txt, key_a, key_b);
-            sw2 .Stop();
-            time_decr.Content = sw2.ElapsedMilliseconds + " мс";
-            //
+            if (russia_rb.IsChecked == true) { //Если русский язык
 
-            textbox_encrypted_txt.Text = encrypted_txt;
-            textbox_decrypted_txt.Text = decrypted_txt;
+                //Зашифрование сообщения
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                var encrypted_txt = affine_cheaper_ru.AFFINE_ENCRYPTED(normal_txt, key_a, key_b);
+                sw.Stop();
+                time_encr.Content = sw.ElapsedMilliseconds + " мс";
+                //
+
+                //Расшифрование сообщения
+                Stopwatch sw2 = new Stopwatch();
+                sw2.Start();
+                var decrypted_txt = affine_cheaper_ru.AFFINE_DECRYPTED(encrypted_txt, key_a, key_b);
+                sw2.Stop();
+                time_decr.Content = sw2.ElapsedMilliseconds + " мс";
+                //
+            
+                textbox_encrypted_txt.Text = encrypted_txt;
+                textbox_decrypted_txt.Text = decrypted_txt;
+            }
+            
+            if (english_rb.IsChecked == true) { //Если английский язык
+
+                //Зашифрование сообщения
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                var encrypted_txt = affine_cheaper_eu.AFFINE_ENCRYPTED(normal_txt, key_a, key_b);
+                sw.Stop();
+                time_encr.Content = sw.ElapsedMilliseconds + " мс";
+                //
+
+                //Расшифрование сообщения
+                Stopwatch sw2 = new Stopwatch();
+                sw2.Start();
+                var decrypted_txt = affine_cheaper_eu.AFFINE_DECRYPTED(encrypted_txt, key_a, key_b);
+                sw2.Stop();
+                time_decr.Content = sw2.ElapsedMilliseconds + " мс";
+                //
+            
+                textbox_encrypted_txt.Text = encrypted_txt;
+                textbox_decrypted_txt.Text = decrypted_txt;
+            }          
+            
+            if (deut_rb.IsChecked == true) { //Если немецкий язык
+
+                //Зашифрование сообщения
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                var encrypted_txt = affine_cheaper_de.AFFINE_ENCRYPTED(normal_txt, key_a, key_b);
+                sw.Stop();
+                time_encr.Content = sw.ElapsedMilliseconds + " мс";
+                //
+
+                //Расшифрование сообщения
+                Stopwatch sw2 = new Stopwatch();
+                sw2.Start();
+                var decrypted_txt = affine_cheaper_de.AFFINE_DECRYPTED(encrypted_txt, key_a, key_b);
+                sw2.Stop();
+                time_decr.Content = sw2.ElapsedMilliseconds + " мс";
+                //
+            
+                textbox_encrypted_txt.Text = encrypted_txt;
+                textbox_decrypted_txt.Text = decrypted_txt;
+            }
+
+
         }
     }
 }

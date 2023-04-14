@@ -19,54 +19,55 @@ using System.Diagnostics;
 
 namespace SEC_LAB_C
 {
-    public class affine_cheaper
+    public class affine_cheaper_eu
     {
         public static string AFFINE_ENCRYPTED(string input_msg, int key_a, int key_b)
         {
-            string outputencr_msg = "";
+            string encrypted_output_msg = "";
             foreach (char c in input_msg)
             {
                 if (Char.IsLetter(c))
                 {
-                    int shiftedChar = ((key_a * ((int)Char.ToLower(c) - 1071) + key_b) % 33) + 1071;
-                    outputencr_msg += Char.IsUpper(c) ? Char.ToUpper((char)shiftedChar) : (char)shiftedChar;
+                    int shiftedChar = ((key_a * ((int)Char.ToLower(c) - 96) + key_b) % 26) + 96;
+                    encrypted_output_msg += Char.IsUpper(c) ? Char.ToUpper((char)shiftedChar) : (char)shiftedChar;
                 }
                 else
                 {
-                    outputencr_msg += c;
+                    encrypted_output_msg += c;
                 }
             }
-            return outputencr_msg;
+            return encrypted_output_msg;
         }
 
-        public static string AFFINE_DECRYPTED(string inputencr_msg, int key_a, int key_b)
+        public static string AFFINE_DECRYPTED(string input_encrypted_msg, int key_a, int key_b)
         {
-            string outputdecr_msg = "";
+            string decrypted_output_msg = "";
             int aInv = 0;
 
-            for (int i = 1; i < 33; i++)
+            for (int i = 1; i < 26; i++)
             {
-                if ((key_a * i) % 33 == 1)
+                if ((key_a * i) % 26 == 1)
                 {
                     aInv = i;
                     break;
                 }
             }
-            foreach (char c in inputencr_msg)
+            foreach (char c in input_encrypted_msg)
             {
                 if (Char.IsLetter(c))
                 {
-                    int shiftedChar = ((aInv * ((int)Char.ToLower(c) - 1071 - key_b + 33)) % 33) + 1071;
-                    outputdecr_msg += Char.IsUpper(c) ? Char.ToUpper((char)shiftedChar) : (char)shiftedChar;
+                    int shiftedChar = ((aInv * ((int)Char.ToLower(c) - 96 - key_b + 26)) % 26) + 96;
+                    decrypted_output_msg += Char.IsUpper(c) ? Char.ToUpper((char)shiftedChar) : (char)shiftedChar;
                 }
                 else
                 {
-                    outputdecr_msg += c;
+                    decrypted_output_msg += c;
                 }
             }
 
-            return outputdecr_msg;
+            return decrypted_output_msg;
         }
+
 
     }
 
