@@ -1,21 +1,11 @@
 ﻿using Microsoft.Win32;
-using SEC_LAB_C;
+using SEC_LAB_C_.AffineCH;
+using SEC_LAB_C_.VizinerCH;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace SEC_LAB_C
 {
@@ -129,6 +119,47 @@ namespace SEC_LAB_C
             }
 
 
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string file_path = openFileDialog.FileName;
+                file_origin = file_path;
+                try
+                {
+                    string text = File.ReadAllText(file_path);
+                    textbox_orginal_txt_viz.Text = text;
+                    string fileContent = File.ReadAllText(file_path);
+                    int characterCount = fileContent.Length;
+                    num_of_symb_viz.Content = characterCount;
+                }
+                catch (Exception ex)
+                {
+                    // Обработка ошибки чтения файла
+                }
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            string key_a = input_key_secondname.Text;
+
+            Stopwatch sw4 = new Stopwatch();
+            sw4.Start();
+            var encrypted_txt = viziner_encr.Encrypt(textbox_orginal_txt_viz.Text, key_a);
+            sw4.Stop();
+            time_encr_viz.Content = sw4.ElapsedMilliseconds + "мс";
+            textbox_encrypted_txt_viz.Text = encrypted_txt;
+
+            Stopwatch sw3 = new Stopwatch();
+            sw3.Start();
+            var decrypted_txt = viziner_encr.Decrypt(textbox_encrypted_txt_viz.Text, key_a);
+            sw3.Stop();
+            time_decr_viz.Content = sw3.ElapsedMilliseconds + "мс";
+            textbox_decrypted_txt_viz.Text = decrypted_txt;
         }
     }
 }
