@@ -17,7 +17,7 @@
                             <Label Content="Ключ b: "></Label>
                             <TextBox Width="136" Margin="10 -23 -30 0" x:Name="input_key_b"/>
                             <Label Content="Открыть файл:" Width="90" HorizontalAlignment="Left"></Label>
-                            <Button Content="Press" Width="70" Margin="10 -23 -65 0"></Button>
+                            <Button Content="Press" Width="70" Margin="10 -23 -65 0" Click="Button_Click"></Button>
                         </StackPanel>
                     </Border>
 
@@ -40,20 +40,28 @@
                         </StackPanel>
                     </Border>
 
-                    <Border Width="350" Height="410" Margin="-420 15 0 0" BorderThickness="1" BorderBrush="Gray">
+                    <Border Width="200" Height="410" Margin="-570 15 0 0" BorderThickness="1" BorderBrush="Gray">
                         <StackPanel>
                             <Label Content="Исходное сообщение:" Background="#FFF7F7F7"></Label>
                             <TextBox Height="381" x:Name="textbox_orginal_txt"></TextBox>
                         </StackPanel>
                     </Border>
 
-                    <Border Width="350" Height="410" Margin="400 -410 0 0" BorderThickness="1" BorderBrush="Gray">
+                    <Border Width="335" Height="410" Margin="0 -410 0 0" BorderThickness="1" BorderBrush="Gray">
                         <StackPanel>
                             <Label Content="Зашифрованное сообщение:" Background="#FFF7F7F7"></Label>
                             <TextBox Height="381" x:Name="textbox_encrypted_txt"></TextBox>
                         </StackPanel>
                     </Border>
-                    <Button Width="100" Height="25" Content="Выполнить" Margin="650 10 0 0"></Button>
+                    
+                    <Border Width="200" Height="410" Margin="550 -410 0 0" BorderThickness="1" BorderBrush="Gray">
+                        <StackPanel>
+                            <Label Content="Расшифрованное сообщение:" Background="#FFF7F7F7"></Label>
+                            <TextBox Height="381" x:Name="textbox_decrypted_txt"></TextBox>
+                        </StackPanel>
+                    </Border>
+                    
+                    <Button Width="100" Height="25" Content="Выполнить" Margin="650 10 0 0" Click="Button_Click_1"></Button>
                 </StackPanel>
 
             </TabItem>
