@@ -80,9 +80,9 @@ namespace SEC_LAB_C
 
                 save_to_file.save(textbox_encrypted_txt.Text, path1);
                 save_to_file.save(textbox_decrypted_txt.Text, path2);
-
-                excel_pr.ExcelPrint1(path1);
-                excel_pr.ExcelPrint2(path2);
+                
+                excel_pr.ExcelPrint1($"D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\Encrypted_vers{DateTime.Now.ToString("hh.mm.ss")}.xlsx", path1, "Зашифрованное сообщение");
+                excel_pr.ExcelPrint1( $"D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\Decrypted_vers{DateTime.Now.ToString("hh.mm.ss")}.xlsx", path2, "Расшифрованное сообщение");
 
             }
             
@@ -110,9 +110,8 @@ namespace SEC_LAB_C
                 save_to_file.save(textbox_encrypted_txt.Text, path1);
                 save_to_file.save(textbox_decrypted_txt.Text, path2);
 
-                excel_pr.ExcelPrint1(path1);
-                excel_pr.ExcelPrint2(path2);
-
+                excel_pr.ExcelPrint1($"D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\Encrypted_vers{DateTime.Now.ToString("hh.mm.ss")}.xlsx", path1, "Зашифрованное сообщение");
+                excel_pr.ExcelPrint1($"D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\Decrypted_vers{DateTime.Now.ToString("hh.mm.ss")}.xlsx", path2, "Расшифрованное сообщение");
             }          
             
             if (deut_rb.IsChecked == true) { //Если немецкий язык
@@ -139,9 +138,8 @@ namespace SEC_LAB_C
                 save_to_file.save(textbox_encrypted_txt.Text, path1);
                 save_to_file.save(textbox_decrypted_txt.Text, path2);
 
-                excel_pr.ExcelPrint1(path1);
-                excel_pr.ExcelPrint2(path2);
-
+                excel_pr.ExcelPrint1($"D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\Encrypted_vers{DateTime.Now.ToString("hh.mm.ss")}.xlsx", path1, "Зашифрованное сообщение");
+                excel_pr.ExcelPrint1($"D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\Decrypted_vers{DateTime.Now.ToString("hh.mm.ss")}.xlsx", path2, "Расшифрованное сообщение");
             }
 
 
@@ -186,6 +184,14 @@ namespace SEC_LAB_C
             sw3.Stop();
             time_decr_viz.Content = sw3.ElapsedMilliseconds + "мс";
             textbox_decrypted_txt_viz.Text = decrypted_txt;
+
+
+            save_to_file.save(textbox_encrypted_txt_viz.Text, path1);
+            save_to_file.save(textbox_decrypted_txt_viz.Text, path2);
+
+            excel_pr.ExcelPrint1($"D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\Encrypted_vers{DateTime.Now.ToString("hh.mm.ss")}.xlsx", path1, "Зашифрованное сообщение");
+            excel_pr.ExcelPrint1($"D:\\BSTU\\ZINIS\\SEC_LAB_C#\\EXCEL\\Decrypted_vers{DateTime.Now.ToString("hh.mm.ss")}.xlsx", path2, "Расшифрованное сообщение");
+
         }
     }
 }
